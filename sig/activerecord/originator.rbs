@@ -1,6 +1,5 @@
 module ActiveRecord
   module Originator
-    VERSION: String
-    # See the writing guide of rbs: https://github.com/ruby/rbs#guides
+    attr_accessor self.backtrace_cleaner: untyped?
   end
 end

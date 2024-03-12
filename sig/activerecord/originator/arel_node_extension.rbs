@@ -1,0 +1,9 @@
+module ActiveRecord
+  module Originator
+    module ArelNodeExtension : Arel::Nodes::Node
+      @ar_originator_backtrace: Array[String]
+
+      def initialize: () -> void
+    end
+  end
+end
