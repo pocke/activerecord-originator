@@ -4,7 +4,7 @@ require_relative "lib/activerecord/originator/version"
 
 Gem::Specification.new do |spec|
   spec.name = "activerecord-originator"
-  spec.version = Activerecord::Originator::VERSION
+  spec.version = ActiveRecord::Originator::VERSION
   spec.authors = ["Masataka Pocke Kuwabara"]
   spec.email = ["kuwabara@pocke.me"]
 

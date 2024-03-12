@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-RSpec.describe Activerecord::Originator do
+RSpec.describe ActiveRecord::Originator do
   it "has a version number" do
-    expect(Activerecord::Originator::VERSION).not_to be nil
+    expect(ActiveRecord::Originator::VERSION).not_to be nil
   end
 
   it "does something useful" do

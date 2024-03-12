@@ -2,7 +2,7 @@
 
 require_relative "originator/version"
 
-module Activerecord
+module ActiveRecord
   module Originator
     class Error < StandardError; end
     # Your code goes here...

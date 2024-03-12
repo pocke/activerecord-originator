@@ -1,4 +1,4 @@
-module Activerecord
+module ActiveRecord
   module Originator
     VERSION: String
     # See the writing guide of rbs: https://github.com/ruby/rbs#guides
