@@ -9,8 +9,8 @@ require_relative "originator/arel_node_extension"
 require_relative "originator/arel_visitor_extension"
 require_relative "originator/collector_proxy"
 
-Arel::Nodes::Node.include ArProducer::ArelNodeExtension
-Arel::Visitors::ToSql.prepend ArProducer::ArelVisitorExtension
+Arel::Nodes::Node.include ActiveRecord::Originator::ArelNodeExtension
+Arel::Visitors::ToSql.prepend ActiveRecord::Originator::ArelVisitorExtension
 
 module ActiveRecord
   module Originator
