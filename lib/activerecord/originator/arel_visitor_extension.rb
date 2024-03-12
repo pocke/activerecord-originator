@@ -28,7 +28,7 @@ module ActiveRecord
       end
 
       def originator_comment(o)
-        frame = Originator.backtrace_cleaner.clean(o.ar_producer_backtrace).first
+        frame = Originator.backtrace_cleaner.clean(o.ar_originator_backtrace).first
         return unless frame
 
         " /* #{frame} */\n"
