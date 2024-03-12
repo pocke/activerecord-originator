@@ -1,0 +1,20 @@
+module ActiveRecord
+  module Originator
+    # This class is a proxy to deduplicate the originator comment.
+    class CollectorProxy
+      @collector: untyped
+
+      @last_str: String | nil
+
+      def initialize: (untyped collector) -> void
+
+      def <<: (String str) -> self
+
+      def add_bind: (*untyped, **untyped) -> self
+
+      def add_binds: (*untyped, **untyped) -> self
+
+      def value: () -> untyped
+    end
+  end
+end

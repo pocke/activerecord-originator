@@ -1,0 +1,16 @@
+module Rails
+  def self.backtrace_cleaner: () -> untyped
+end
+
+module ActiveRecord::Originator
+  interface _ArelVisitor
+    def accept: (untyped, untyped) -> untyped
+  end
+
+  interface _Collector
+    def <<: (String) -> self
+    def add_bind: (untyped obj) -> self
+    def add_binds: (untyped, ?untyped) -> self
+    def value: () -> untyped
+  end
+end

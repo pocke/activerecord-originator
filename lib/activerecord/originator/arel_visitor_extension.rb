@@ -16,10 +16,14 @@ module ActiveRecord
         visit_Arel_Nodes_InnerJoin
       ].each do |method_name|
         define_method(method_name) do |o, collector|
-          comment = originator_comment(o)
-          res = super(o, collector)
-          res << comment if comment && !collector.last_str.end_with?(comment)
-          res
+          __skip__ = begin
+            comment = originator_comment(o)
+            res = super(o, collector)
+            if comment && !collector.last_str.end_with?(comment)
+              res << comment if comment && !collector.last_str.end_with?(comment)
+            end
+            res
+          end
         end
       end
 

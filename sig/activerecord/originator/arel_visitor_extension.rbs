@@ -1,0 +1,11 @@
+module ActiveRecord
+  module Originator
+    module ArelVisitorExtension : _ArelVisitor
+      def accept: (untyped object, _Collector collector) -> untyped
+
+      private
+
+      def originator_comment: (untyped o) -> String?
+    end
+  end
+end
