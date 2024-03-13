@@ -1,24 +1,30 @@
 # ActiveRecord::Originator
 
-TODO: Delete this and the text below, and describe your gem
+Add SQL comments to indicate the origin of the SQL.
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/activerecord/originator`. To experiment with that code, run `bin/console` for an interactive prompt.
+This gem adds SQL comments indicating the origin of the part of the query. This is useful for debugging large queries.
+
+Rails tells us where the SQL is executed, but it doesn't tell us where the SQL is constructed.
+This gem lets you know where the SQL is constructed! For example:
+
+```sql
+Article Load (0.1ms)  SELECT "articles".* FROM "articles" WHERE "articles"."status" = ? /* app/models/article.rb:3:in `published' */
+ AND "articles"."category_id" = ? /* app/controllers/articles_controller.rb:3:in `index' */
+ ORDER BY "articles"."created_at" DESC /* app/models/article.rb:4:in `order_by_latest' */
+```
+
+You can see where `.where` and `.order` methods are called without reading the source code. It is helpful if the query builder is complex.
 
 ## Installation
 
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
-
 Install the gem and add to the application's Gemfile by executing:
 
-    $ bundle add UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
+```console
+$ bundle add activerecord-originator
+```
 
-If bundler is not being used to manage dependencies, install the gem by executing:
-
-    $ gem install UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
-
-## Usage
-
-TODO: Write usage instructions here
+You do not need to do anything else. The gem will automatically add comments to the SQL.
+Check the logs to see the comments.
 
 ## Development
 
