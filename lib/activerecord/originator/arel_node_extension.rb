@@ -3,7 +3,7 @@
 module ActiveRecord
   module Originator
     module ArelNodeExtension
-      def initialize
+      def initialize(...)
         __skip__ = super
         @ar_originator_backtrace = caller
       end

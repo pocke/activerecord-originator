@@ -10,12 +10,19 @@ module ActiveRecord
       private
 
       %i[
-        visit_Arel_Nodes_Ascending
-        visit_Arel_Nodes_Descending
-        visit_Arel_Nodes_Equality
-        visit_Arel_Nodes_InnerJoin
-      ].each do |method_name|
-        define_method(method_name) do |o, collector|
+        Ascending
+        Descending
+        Equality
+        NotEqual
+        InnerJoin
+        HomogeneousIn
+        GreaterThanOrEqual
+        GreaterThan
+        LessThan
+        LessThanOrEqual
+        GreaterThanOrEqual
+      ].each do |klass_name|
+        define_method(:"visit_Arel_Nodes_#{klass_name}") do |o, collector|
           __skip__ = begin
             comment = originator_comment(o)
             res = super(o, collector)
@@ -38,7 +45,7 @@ module ActiveRecord
         " /* #{escape_comment(frame)} */\n"
       end
 
-      def escape_coment(comment)
+      def escape_comment(comment)
         while comment.include?('/*') || comment.include?('*/')
           comment = comment.gsub('/*', '').gsub('*/', '')
         end
