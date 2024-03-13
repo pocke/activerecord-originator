@@ -3,9 +3,9 @@ class Post < ActiveRecord::Base
 
   scope :hello, -> { where(title: "hello") }
   scope :draft, -> { where(state: "draft") }
-  scope :state_for, -> (state) { where(state: state) }
-  scope :not_state_for, -> (state) { where.not(state: state) }
-  scope :compare_id, -> (range) { where(id: range) }
+  scope :state_for, ->(state) { where(state: state) }
+  scope :not_state_for, ->(state) { where.not(state: state) }
+  scope :compare_id, ->(range) { where(id: range) }
   scope :not_eq, -> { where.not(title: 'hello') }
-  scope :order_by_title, -> (direction) { order(title: direction) }
+  scope :order_by_title, ->(direction) { order(title: direction) }
 end

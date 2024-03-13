@@ -18,7 +18,7 @@ ActiveRecord::Originator.backtrace_cleaner = ActiveSupport::BacktraceCleaner.new
   root_dir = File.expand_path("..", __dir__)
   bc.add_filter { |line| line.gsub(root_dir, "") }
   bc.add_filter { |line| line.gsub(/:in .+$/, "") }
-  bc.add_silencer { |line| not line.start_with?('/spec/')}
+  bc.add_silencer { |line| not line.start_with?('/spec/') }
 end
 
 Pathname(__dir__).glob('support/*.rb').each { |f| require f }
