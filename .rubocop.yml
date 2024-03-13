@@ -16,3 +16,6 @@ Layout/LineLength:
 
 Layout/FirstHashElementIndentation:
   Enabled: false
+
+Lint/AssignmentInCondition:
+  Enabled: false

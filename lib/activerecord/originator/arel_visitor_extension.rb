@@ -28,10 +28,21 @@ module ActiveRecord
       end
 
       def originator_comment(o)
-        frame = Originator.backtrace_cleaner.clean(o.ar_originator_backtrace).first
+        traces = o.ar_originator_backtrace
+        if c = Originator.backtrace_cleaner
+          traces = c.clean(traces)
+        end
+        frame = traces.first
         return unless frame
 
-        " /* #{frame} */\n"
+        " /* #{escape_comment(frame)} */\n"
+      end
+
+      def escape_coment(comment)
+        while comment.include?('/*') || comment.include?('*/')
+          comment = comment.gsub('/*', '').gsub('*/', '')
+        end
+        comment
       end
     end
   end

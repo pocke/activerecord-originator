@@ -1,5 +1,5 @@
 module ActiveRecord
   module Originator
-    attr_accessor self.backtrace_cleaner: untyped?
+    attr_accessor self.backtrace_cleaner: ActiveSupport::BacktraceCleaner?
   end
 end
