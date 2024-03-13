@@ -38,7 +38,7 @@ module ActiveRecord
         " /* #{escape_comment(frame)} */\n"
       end
 
-      def escape_coment(comment)
+      def escape_comment(comment)
         while comment.include?('/*') || comment.include?('*/')
           comment = comment.gsub('/*', '').gsub('*/', '')
         end
