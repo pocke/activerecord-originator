@@ -14,6 +14,7 @@ module ActiveRecord
         visit_Arel_Nodes_Descending
         visit_Arel_Nodes_Equality
         visit_Arel_Nodes_InnerJoin
+        visit_Arel_Nodes_HomogeneousIn
       ].each do |method_name|
         define_method(method_name) do |o, collector|
           __skip__ = begin
