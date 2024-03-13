@@ -6,6 +6,8 @@ module ActiveRecord
       private
 
       def originator_comment: (untyped o) -> String?
+
+      def escape_comment: (String comment) -> String
     end
   end
 end
