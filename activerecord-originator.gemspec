@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors = ["Masataka Pocke Kuwabara"]
   spec.email = ["kuwabara@pocke.me"]
 
-  spec.summary = "Inject SQL comments to indicate the origin of the SQL."
-  spec.description = "This gem injects comments to the SQL to indicate where the SQL parts are constructed."
+  spec.summary = "Add SQL comments to indicate the origin of the SQL."
+  spec.description = "This gem adds comments to the SQL to indicate where the SQL parts are constructed."
   spec.homepage = "https://github.com/pocke/activerecord-originator"
   spec.required_ruby_version = ">= 3.1.0"
 
