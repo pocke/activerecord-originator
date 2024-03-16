@@ -17,7 +17,7 @@ RSpec.describe ActiveRecord::Originator do
       end
 
       it 'annotates != operator' do
-        expect(Post.not_eq.to_sql).to eq(<<~SQL)
+        expect(Post.not_eq('hello').to_sql).to eq(<<~SQL)
           SELECT "posts".* FROM "posts" WHERE "posts"."title" != 'hello' /* /spec/support/post.rb:9 */
         SQL
       end
@@ -49,6 +49,18 @@ RSpec.describe ActiveRecord::Originator do
       it 'annotates < operator' do
         expect(Post.compare_id(...42).to_sql).to eq(<<~SQL)
           SELECT "posts".* FROM "posts" WHERE "posts"."id" < 42 /* /spec/support/post.rb:8 */
+        SQL
+      end
+
+      it 'annotates IS NULL operator' do
+        expect(Post.state_for(nil).to_sql).to eq(<<~SQL)
+          SELECT "posts".* FROM "posts" WHERE "posts"."state" IS NULL /* /spec/support/post.rb:6 */
+        SQL
+      end
+
+      it 'annotates IS NOT NULL operator' do
+        expect(Post.not_eq(nil).to_sql).to eq(<<~SQL)
+          SELECT "posts".* FROM "posts" WHERE "posts"."title" IS NOT NULL /* /spec/support/post.rb:9 */
         SQL
       end
     end
