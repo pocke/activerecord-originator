@@ -10,7 +10,13 @@ require_relative "originator/arel_node_extension"
 require_relative "originator/arel_visitor_extension"
 require_relative "originator/collector_proxy"
 
-Arel::Nodes::Node.descendants.each do |klass|
+ActiveRecord::Originator::ArelVisitorExtension::TARGET_NODE_CLASSESS.each do |name|
+  begin
+    klass = Arel::Nodes.const_get(name)
+  rescue NameError
+    # Some classes are not defined in old arel
+    next
+  end
   klass.prepend ActiveRecord::Originator::ArelNodeExtension
 end
 Arel::Visitors::ToSql.prepend ActiveRecord::Originator::ArelVisitorExtension
