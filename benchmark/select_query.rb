@@ -20,7 +20,7 @@ end
 end
 
 Benchmark.ips do |x|
-  x.report("without where") { Post.all.to_sql }
-  x.report('with single condition') { Post.where(title: 'title1').to_sql }
-  x.report('with multiple condition') { Post.where(state: 'draft', comments_count: ..42, likes_count: ..43).to_sql }
+  x.report("without where") { Post.all.to_a }
+  x.report('with single condition') { Post.where(title: 'title1').to_a }
+  x.report('with multiple condition') { Post.where(state: 'draft', comments_count: ..42, likes_count: ..43).to_a }
 end
