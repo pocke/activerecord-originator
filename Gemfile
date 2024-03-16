@@ -14,3 +14,5 @@ gem "rubocop", "~> 1.21", require: false
 gem 'steep', require: false
 
 gem 'sqlite3'
+
+gem 'benchmark-ips'
