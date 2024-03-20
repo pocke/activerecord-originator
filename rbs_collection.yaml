@@ -6,8 +6,3 @@ sources:
     repo_dir: gems
 
 path: .gem_rbs_collection
-
-gems:
-  - name: activerecord-originator
-    ignore: true
-  - name: activerecord
