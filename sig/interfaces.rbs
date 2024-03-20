@@ -1,7 +1,3 @@
-module Rails
-  def self.backtrace_cleaner: () -> untyped
-end
-
 module ActiveRecord::Originator
   interface _ArelVisitor
     def accept: (untyped, untyped) -> untyped
