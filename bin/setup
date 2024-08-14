@@ -7,7 +7,7 @@ bundle install
 
 set +u
 if [ -z "$BUNDLE_GEMFILE" ]; then
-  bundle exec rbs collection install
+  bundle exec rbs collection install --frozen
 else
   echo "Skipping rbs collection install because BUNDLE_GEMFILE is set"
 fi
