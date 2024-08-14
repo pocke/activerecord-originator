@@ -6,15 +6,15 @@ gems:
   source:
     type: git
     name: ruby/gem_rbs_collection
-    revision: be76a75932e8ed6ee91a95ba936cf88b674bf044
+    revision: c34ed02f870fb02571f664062eb13ef507702029
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
 - name: activerecord
-  version: '7.0'
+  version: '7.1'
   source:
     type: git
     name: ruby/gem_rbs_collection
-    revision: be76a75932e8ed6ee91a95ba936cf88b674bf044
+    revision: c34ed02f870fb02571f664062eb13ef507702029
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
 - name: activesupport
@@ -22,7 +22,7 @@ gems:
   source:
     type: git
     name: ruby/gem_rbs_collection
-    revision: be76a75932e8ed6ee91a95ba936cf88b674bf044
+    revision: c34ed02f870fb02571f664062eb13ef507702029
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
 - name: base64
@@ -38,7 +38,7 @@ gems:
   source:
     type: git
     name: ruby/gem_rbs_collection
-    revision: be76a75932e8ed6ee91a95ba936cf88b674bf044
+    revision: c34ed02f870fb02571f664062eb13ef507702029
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
 - name: connection_pool
@@ -46,7 +46,7 @@ gems:
   source:
     type: git
     name: ruby/gem_rbs_collection
-    revision: be76a75932e8ed6ee91a95ba936cf88b674bf044
+    revision: c34ed02f870fb02571f664062eb13ef507702029
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
 - name: date
@@ -62,7 +62,7 @@ gems:
   source:
     type: git
     name: ruby/gem_rbs_collection
-    revision: be76a75932e8ed6ee91a95ba936cf88b674bf044
+    revision: c34ed02f870fb02571f664062eb13ef507702029
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
 - name: logger
@@ -97,4 +97,12 @@ gems:
   version: '0'
   source:
     type: stdlib
+- name: tzinfo
+  version: '2.0'
+  source:
+    type: git
+    name: ruby/gem_rbs_collection
+    revision: c34ed02f870fb02571f664062eb13ef507702029
+    remote: https://github.com/ruby/gem_rbs_collection.git
+    repo_dir: gems
 gemfile_lock_path: Gemfile.lock
