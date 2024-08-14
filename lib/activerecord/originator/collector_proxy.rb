@@ -32,6 +32,14 @@ module ActiveRecord
       def value
         @collector.value
       end
+
+      def retryable
+        @collector.retryable
+      end
+
+      def retryable=(v)
+        @collector.retryable = v
+      end
     end
   end
 end
