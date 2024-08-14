@@ -4,4 +4,10 @@ IFS=$'\n\t'
 set -vx
 
 bundle install
-bundle exec rbs collection install
+
+set +u
+if [ -z "$BUNDLE_GEMFILE" ]; then
+  bundle exec rbs collection install
+else
+  echo "Skipping rbs collection install because BUNDLE_GEMFILE is set"
+fi
