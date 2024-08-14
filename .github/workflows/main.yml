@@ -19,7 +19,6 @@ jobs:
           - '3.3'
           - 'head'
         gemfile:
-          - activerecord_6_0
           - activerecord_6_1
           - activerecord_7_0
           - activerecord_7_1
