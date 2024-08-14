@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v0.2.2 - 2024-08-14
+
+* Support Rails 7.2 [#22](https://github.com/pocke/activerecord-originator/pull/22)
+
 ## v0.2.1 - 2024-03-20
 
 This release does not affect the behavior of the library. It changes only RBS files.
