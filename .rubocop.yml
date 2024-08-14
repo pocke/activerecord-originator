@@ -19,3 +19,6 @@ Layout/FirstHashElementIndentation:
 
 Lint/AssignmentInCondition:
   Enabled: false
+
+Gemspec/DevelopmentDependencies:
+  Enabled: false
