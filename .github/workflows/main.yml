@@ -23,6 +23,12 @@ jobs:
           - activerecord_7_0
           - activerecord_7_1
           - activerecord_7_2
+        exclude:
+          # Old ARs does not work on Ruby head due to lack of stdlib dependencies
+          - ruby: 'head'
+            gemfile: activerecord_6_1
+          - ruby: 'head'
+            gemfile: activerecord_7_0
 
     env:
       BUNDLE_GEMFILE: gemfiles/${{ matrix.gemfile }}.gemfile
