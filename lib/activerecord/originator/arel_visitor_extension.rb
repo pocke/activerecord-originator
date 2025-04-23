@@ -44,7 +44,7 @@ module ActiveRecord
         frame = traces.first
         return unless frame
 
-        " /* #{escape_comment(frame)} */\n"
+        Originator.current_formatter.format(escape_comment(frame))
       end
 
       def escape_comment(comment)

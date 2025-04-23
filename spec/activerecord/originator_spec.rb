@@ -76,5 +76,17 @@ RSpec.describe ActiveRecord::Originator do
         SELECT "posts".* FROM "posts" ORDER BY "posts"."title" DESC /* /spec/support/post.rb:10 */
       SQL
     end
+
+    context 'with one_liner format' do
+      before do
+        ActiveRecord::Originator.format = :one_liner
+      end
+
+      it 'outputs in one line' do
+        expect(Post.hello.draft.to_sql).to eq(<<~SQL.chomp)
+          SELECT "posts".* FROM "posts" WHERE "posts"."title" = 'hello' /* <- /spec/support/post.rb:4 */ AND "posts"."state" = 'draft' /* <- /spec/support/post.rb:5 */
+        SQL
+      end
+    end
   end
 end

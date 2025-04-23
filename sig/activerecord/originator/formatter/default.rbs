@@ -1,0 +1,9 @@
+module ActiveRecord
+  module Originator
+    module Formatter
+      module Default
+        extend _Formatter
+      end
+    end
+  end
+end
