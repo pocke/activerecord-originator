@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'logger' # For https://github.com/rails/rails/pull/54264
 require "activerecord/originator"
 
 RSpec.configure do |config|
