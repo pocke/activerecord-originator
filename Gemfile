@@ -2,6 +2,8 @@
 
 source "https://rubygems.org"
 
+gem 'benchmark', require: false
+gem 'logger', require: false
 gem 'rake', require: false
 gem 'rspec', require: false
 gem 'rubocop', require: false
