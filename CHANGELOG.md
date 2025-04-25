@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v0.3.0 - 2025-04-25
+
+* Support `ActiveRecord::Originator.format` option. [#26](https://github.com/pocke/activerecord-originator/pull/26)
+
 ## v0.2.2 - 2024-08-14
 
 * Support Rails 7.2 [#22](https://github.com/pocke/activerecord-originator/pull/22)
