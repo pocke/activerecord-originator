@@ -26,6 +26,21 @@ $ bundle add activerecord-originator
 You do not need to do anything else. The gem will automatically add comments to the SQL.
 Check the logs to see the comments.
 
+### Configure format
+
+You can set `ActiveRecord::Originator.format` to `:one_liner` if you prefer your SQL log in one line.
+
+```ruby
+# in your configuration file
+ActiveRecord::Originator.format = :one_liner
+```
+
+Then you can get logs like below.
+
+```sql
+Article Load (0.1ms)  SELECT "articles".* FROM "articles" WHERE "articles"."status" = ? /* <- app/models/article.rb:3:in `published' */ AND "articles"."category_id" = ? /* <- app/controllers/articles_controller.rb:3:in `index' */ ORDER BY "articles"."created_at" DESC /* <- app/models/article.rb:4:in `order_by_latest' */
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.

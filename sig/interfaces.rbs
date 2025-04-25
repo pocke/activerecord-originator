@@ -9,4 +9,8 @@ module ActiveRecord::Originator
     def add_binds: (untyped, ?untyped) -> self
     def value: () -> untyped
   end
+
+  interface _Formatter
+    def format: (String) -> String
+  end
 end

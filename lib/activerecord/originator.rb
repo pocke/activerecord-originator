@@ -9,6 +9,7 @@ require_relative "originator/version"
 require_relative "originator/arel_node_extension"
 require_relative "originator/arel_visitor_extension"
 require_relative "originator/collector_proxy"
+require_relative "originator/formatter"
 
 ActiveRecord::Originator::ArelVisitorExtension::TARGET_NODE_CLASSESS.each do |name|
   begin
@@ -23,8 +24,12 @@ Arel::Visitors::ToSql.prepend ActiveRecord::Originator::ArelVisitorExtension
 
 module ActiveRecord
   module Originator
+    extend Formatter
+
     mattr_accessor :backtrace_cleaner
   end
 end
+
+ActiveRecord::Originator.format = :default
 
 require_relative "originator/railtie" if defined?(Rails)

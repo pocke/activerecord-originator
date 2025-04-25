@@ -1,0 +1,12 @@
+module ActiveRecord
+  module Originator
+    module Formatter
+      attr_reader format: Symbol
+      def format=: (Symbol) -> void
+                 
+      attr_reader current_formatter: _Formatter
+
+      def resolve_formatter: () -> _Formatter
+    end
+  end
+end
