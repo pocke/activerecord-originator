@@ -15,6 +15,10 @@ module ActiveRecord
       def add_binds: (*untyped, **untyped) -> self
 
       def value: () -> untyped
+
+      def retryable: () -> untyped
+
+      def retryable=: [T] (T) -> T
     end
   end
 end
