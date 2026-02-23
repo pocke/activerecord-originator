@@ -3,7 +3,7 @@
 module ActiveRecord
   module Originator
     module ArelVisitorExtension
-      TARGET_NODE_CLASSESS = %i[
+      TARGET_NODE_CLASSES = %i[
         Ascending
         Descending
         Equality
@@ -14,7 +14,6 @@ module ActiveRecord
         GreaterThan
         LessThan
         LessThanOrEqual
-        GreaterThanOrEqual
       ]
 
       def accept(object, collector)
@@ -23,7 +22,7 @@ module ActiveRecord
 
       private
 
-      TARGET_NODE_CLASSESS.each do |klass_name|
+      TARGET_NODE_CLASSES.each do |klass_name|
         define_method(:"visit_Arel_Nodes_#{klass_name}") do |o, collector|
           __skip__ = begin
             comment = originator_comment(o)
