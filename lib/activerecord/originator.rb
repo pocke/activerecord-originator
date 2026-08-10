@@ -11,7 +11,7 @@ require_relative "originator/arel_visitor_extension"
 require_relative "originator/collector_proxy"
 require_relative "originator/formatter"
 
-ActiveRecord::Originator::ArelVisitorExtension::TARGET_NODE_CLASSESS.each do |name|
+ActiveRecord::Originator::ArelVisitorExtension::TARGET_NODE_CLASSES.each do |name|
   begin
     klass = Arel::Nodes.const_get(name)
   rescue NameError
