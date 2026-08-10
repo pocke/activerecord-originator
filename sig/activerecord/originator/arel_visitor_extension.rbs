@@ -1,7 +1,7 @@
 module ActiveRecord
   module Originator
     module ArelVisitorExtension : _ArelVisitor
-      TARGET_NODE_CLASSESS: Array[Symbol]
+      TARGET_NODE_CLASSES: Array[Symbol]
       def accept: (untyped object, _Collector collector) -> untyped
 
       private
